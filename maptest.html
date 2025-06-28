@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Carte Leaflet</title>
+  <title>Carte centrée sur 36.08642, 9.37486</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Feuille de style Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
         crossorigin=""/>
+
   <style>
-    #map { height: 400px; }
+    #map {
+      height: 100vh; /* pleine hauteur */
+      width: 100%;   /* pleine largeur */
+    }
   </style>
 </head>
 <body>
 
 <div id="map"></div>
 
+<!-- Script Leaflet -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin=""></script>
+
 <script>
-  var map = L.map('map').setView([36.8, 10.17], 13); // Exemple : Tunis
+  // Initialisation de la carte
+  var map = L.map('map').setView([36.08642, 9.37486], 14);
+
+  // Couche OpenStreetMap
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap'
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 </script>
 
