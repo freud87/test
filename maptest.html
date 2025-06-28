@@ -35,6 +35,11 @@
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
+  // Ajout de la popup
+  L.popup()
+    .setLatLng([latitude, longitude])
+    .setContent("<b>ISET Siliana</b><br>Latitude : 36.076380<br>Longitude : 9.383563")
+    .openOn(map);
 </script>
 
 </body>
