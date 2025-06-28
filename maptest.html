@@ -40,11 +40,19 @@
   var latitude = 36.076380;
   var longitude = 9.383563;
 
-  // Ajout de la popup
-  L.popup()
-    .setLatLng([latitude, longitude])
-    .setContent("<b>ISET Siliana</b>")
-    .openOn(map);
+  // Définition de l’icône personnalisée
+  var isetIcon = L.icon({ 
+    iconUrl: 'icone.iset.png', 
+    iconSize: [40, 40],
+    iconAnchor: [20, 40],
+    popupAnchor: [0, -40]
+  });
+
+  // Ajout d’un marqueur avec icône personnalisée + popup
+  L.marker([latitude, longitude], { icon: isetIcon })
+    .addTo(map)
+    .bindPopup("<b>ISET Siliana</b>")
+    .openPopup(); // pour l’ouvrir automatiquement au chargement
 </script>
 
 </body>
