@@ -12,8 +12,8 @@
 
   <style>
     #map {
-      height: 100vh; /* pleine hauteur */
-      width: 100%;   /* pleine largeur */
+      height: 100vh;
+      width: 100%;
     }
   </style>
 </head>
@@ -27,7 +27,7 @@
         crossorigin=""></script>
 
 <script>
-  // Initialisation de la carte
+  // Initialisation de la carte centrée à 36.08642, 9.37486
   var map = L.map('map').setView([36.08642, 9.37486], 14);
 
   // Couche OpenStreetMap
@@ -35,6 +35,11 @@
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
+
+  // Coordonnées de la popup (ISET Siliana)
+  var latitude = 36.076380;
+  var longitude = 9.383563;
+
   // Ajout de la popup
   L.popup()
     .setLatLng([latitude, longitude])
